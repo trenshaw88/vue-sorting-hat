@@ -18,13 +18,9 @@
         </div>
       </div>
      
-      <div>
-           <p v-for="question in questions"> <button>{{question.answers[0].text}}</button> </p>
-         </div>
+ 
 
     <ul>
-      <li v-for="question in questions">{{question.text}} {{question.answers[0].text}} </li>
-      <li <button v-on:click="submit">Select</button></li>
       <li v-for="house in houses">{{house.name}} -{{house.description}} </li>
 
 
