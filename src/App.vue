@@ -1,17 +1,16 @@
 <template>
   <div id="app" class="container" v-cloak>
     <img src="./assets/hw.png">
-    <button v-on:click="next">Reload</button>
     <h1>{{ title }}</h1>
     <h2>Get yourself sorted and find out where you belong in the world of witchcraft and wizardry.</h2>
-    <div v-for="(question, index) in questions"> 
-      <div v-show="index === questionIndex">
 
+    <div v-for="question in questions"> 
+      <div v-show="index === questionIndex">
             <h3>{{question.text}}</h3>
               <ol>
                 <li v-for="answer in question.answers">
                   <label>
-                    <button>{{question.answers[0].text}}</button>
+                    <button>{{question.answers.text}}</button>
                   </label>
                 </li>
               </ol>
@@ -38,7 +37,6 @@ export default {
   data () {
     return {
       title: 'Vue Sorting Hat',
-      questionIndex:0,
       houses: [ { name: 'Gryffindor', description: 'The house of the brave, loyal, courageous, adventurous, daring and chivalrous. Those who stand up for others are typically Gryffindors. Brave-hearted is the most well-known Gryffindor characteristic, and Gryffindors are also known for having a lot of nerve.'}, 
                 { name: 'Hufflepuff', description: 'This house values hard work, dedication, fair play, patience, and loyalty. Hufflepuff’s are known for being just and true. "Do what is nice" is their motto.'},
                 { name: 'Ravenclaw', description: 'The house is known for their wisdom, intelligence, creativity, cleverness and knowledge. Those who value brains over brawn can be found here. Ravenclaws often tend to be quite quirky as well. "Do what is wise" is the motto they strive to follow.'},
