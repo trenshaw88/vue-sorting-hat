@@ -4,7 +4,6 @@
     <div class="row">
       <div class="large-12 columns">
         <h1>{{ title }}</h1>
-        <!--<h2>{{ questions }}</h2>-->
         <div class="container">
           <div v-for="(question, index) in questions">
             <div v-show="index === questionIndex">
@@ -27,12 +26,12 @@
               </button>
             </div>
           </div>
-          <!--<div v-show="questionIndex === data.questions.length">
+          <div v-show="questionIndex === questions.length">
             <h3>Your Results</h3>
             <p>
-              House: {{ score() }}
+              House: {{ score() }} 
             </p>
-          </div>-->
+          </div>
         </div>
       </div>
     </div>
@@ -45,6 +44,7 @@ export default {
   data () {
     return {
       title: 'Vue Sorting Hat',
+      questionIndex: 0,
       questions: [{
                 text: 'What is your favorite color?', 
                 answers: [{
@@ -146,7 +146,6 @@ export default {
                 ]
             }
         ],
-      questionIndex: 0,
       userAnswers: Array(),
       houses: [{ 
                 name: 'Gryffindor', 
@@ -165,7 +164,6 @@ export default {
                   description: 'This is the house of the cunning, prideful, resourceful, ambitious, intelligent, and determined. Slytherin\'s love to be in charge and crave leadership. \'Do what is necessary\'is the motto of this house.'
                 }
               ],
-      methods: {
             next: function() {
                 this.questionIndex++;
                 console.log(this.userAnswers);
@@ -189,9 +187,8 @@ export default {
                     }
                 }
                 return maxEl;
-            },
-        
-      }
+              
+      }          
     }
   }
 }
@@ -207,8 +204,13 @@ export default {
   margin-top: 60px;
 }
 
-h1, h2 {
+h1{
   font-weight: normal;
+  font-size: 2.5rem;
+}
+h2 {
+  font-weight: bold;
+  font-size: 1.6rem;
 }
 
 ul {
@@ -219,6 +221,7 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
+  font-size: 1.3rem;
 }
 
 a {
